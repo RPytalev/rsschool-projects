@@ -73,9 +73,6 @@ a:hover {
 
 body {
     min-height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
 .container {
@@ -242,12 +239,6 @@ body {
     color: #fff;
 }
 
-.portfolio-btn {
-    border: 1px solid #bdae82;
-    color: #bdae82;
-    background-color: transparent;
-}
-
 .section-skills {
     height: 482px;
 }
@@ -265,7 +256,6 @@ body {
 
 .section-title {
     position: relative;
-    /* width: 112px; */
     height: 80px;
     text-align: center;
 }
@@ -316,10 +306,6 @@ body {
     margin: 0;
 }
 
-/* .skills-item:nth-child(3) {
-    margin: 0 40px 0 0;
-} */
-
 .skills-title {
     padding-top: 50px;
     padding-right: 20px;
@@ -345,6 +331,38 @@ body {
 
 .section-portfolio {
     height: 1500px;
+}
+
+.btn-group {
+    display: flex;
+    flex-flow: row wrap;
+    width: 895px;
+    height: 55px;
+    margin-bottom: 60px;
+}
+
+.portfolio-btn {
+    flex: calc(25% - 15px);
+    margin-left: 5px;
+    border: 1px solid #bdae82;
+    color: #bdae82;
+    background-color: transparent;
+}
+
+.portfolio-btn:hover {
+    color: #000;
+    background-color: #bdae82;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    height: 1145px; 
+}
+
+.gallery-item {
+    flex: calc(33% - 50px);
+    gap: 25px;
 }
 
 .footer {
