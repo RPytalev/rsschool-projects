@@ -71,6 +71,18 @@ a:hover {
     stroke: #bdae82;
 }
 
+.btn {
+    width: 200px;
+    height: 55px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
 body {
     min-height: 100vh;
 }
@@ -215,18 +227,6 @@ body {
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
-}
-
-.btn {
-    width: 200px;
-    height: 55px;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 40px;
-    cursor: pointer;
-    transition: color 0.3s;
 }
 
 .hero-btn {
@@ -389,6 +389,72 @@ body {
 
 .section-price {
     height: 845px;
+}
+
+.cards {
+    width: 100%;
+    height: 505px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex: calc(33% - 50px);
+    margin-left: 25px;
+    border: 2px solid #BDAE82;
+}
+
+.cards:first-child {
+    margin: 0;
+}
+
+.card-title {
+    margin-top: 43px;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 56px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.card-price {
+    margin: 20px 0;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: #BDAE82;
+}
+
+.card-description {
+    display: block;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.price-btn {
+    margin-top: 40px;
+    margin-bottom: 43px;
+    color: #000;
+    border: 0;
+    background-color: #bdae82;
+}
+
+.price-btn:hover {
+    color: #fff;
 }
 
 .footer {
