@@ -19,6 +19,7 @@
 }
 
 html {
+    width: 1440px;
     background-color: #000;
     color: #fff;
     scroll-behavior: smooth;
@@ -27,6 +28,11 @@ html {
 
 h2 {
     color: #bdae82;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
 }
 
 ul {
@@ -48,11 +54,28 @@ a:hover {
     color: #bdae82;
 }
 
+.icon { 
+    width: 50px; 
+    height: 50px;
+    fill: #fff;
+    stroke: #fff;
+}
+
+.skills-icon {
+    fill: #bdae82;
+    stroke: #bdae82;
+}
+
+.icon:hover {
+    fill: #bdae82;
+    stroke: #bdae82;
+}
+
 body {
     min-height: 100vh;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .container {
@@ -60,11 +83,9 @@ body {
     /* max-width: 1440px; */
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    align-items: center;
 }
 
-.header-container {
+.bg-header-container {
     position: relative;
     width: 1440px;
     height: 910px;
@@ -76,13 +97,22 @@ body {
 .header {
     width: 100%;
     height: 90px;
+    
+}
+
+.header-container {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .logo {
     width: 50px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .nav {
@@ -149,6 +179,20 @@ body {
     text-align: center;
 }
 
+.main-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 .hero-container {
     position: absolute;
     width: 500px;
@@ -176,16 +220,140 @@ body {
     line-height: 40px;
 }
 
-.hero-btn {
+.btn {
     width: 200px;
     height: 55px;
-    color: #000;
-    border: 1px solid #bdae82;
-    background-color: #bdae82;
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 40px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.hero-btn {
+    color: #000;
+    border: 0;
+    background-color: #bdae82;
+}
+
+.hero-btn:hover {
+    color: #fff;
+}
+
+.portfolio-btn {
+    border: 1px solid #bdae82;
+    color: #bdae82;
+    background-color: transparent;
+}
+
+.section-skills {
+    height: 482px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 80px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.section-title {
+    position: relative;
+    /* width: 112px; */
+    height: 80px;
     text-align: center;
 }
+
+.section-title:before {
+    position: absolute;
+    top: 50%;
+    right: 150%;
+    width: 250px;
+    content: '';
+    border-color: #bdae82;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.section-title:after {
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    width: 250px;
+    content: '';
+    border-color: #bdae82;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.skills-items {
+    width: 100%;
+    height: 242px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.skills-item {
+    /* width: 320px; */
+    flex: calc(25% - 120px);
+    height: 240px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-left: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.skills-item:first-child {
+    margin: 0;
+}
+
+/* .skills-item:nth-child(3) {
+    margin: 0 40px 0 0;
+} */
+
+.skills-title {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.skills-text {
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.section-portfolio {
+    height: 1500px;
+}
+
+.footer {
+    height: 100px;
+    background-color: rgb(170, 22, 22);
+}
+
+@media (max-width: 800px) {
+    .skills-item {
+        flex: calc(50% - 40px);
+    }
+  }
