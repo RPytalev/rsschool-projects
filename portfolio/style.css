@@ -106,7 +106,7 @@ body {
     position: relative;
     width: 1440px;
     height: 910px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/header-bg.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/header-bg.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
 }
@@ -388,7 +388,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/video-player.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/video-player.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
 }
@@ -397,6 +397,11 @@ body {
     position: absolute;
     width: 130px;
     height: 130px;
+    transition: color 0.3s;
+}
+
+.video-player-icon:hover {
+    cursor: pointer;
 }
 
 .section-price {
@@ -569,7 +574,12 @@ body {
     fill: var(--color-white);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+    :root {
+        --font1: 40px;
+        --font2: 32px;
+      }
+      
     .skills-item {
         flex: calc(50% - 40px);
     }
