@@ -539,9 +539,34 @@ body {
     color: var(--color-gold);  
 }
 
-.footer {
+.footer-container {
     height: 100px;
-    background-color: rgb(170, 22, 22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year {
+    margin: 0 20px;
+}
+
+.social-network-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-network-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    fill: var(--color-white);
 }
 
 @media (max-width: 800px) {
