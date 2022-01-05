@@ -27,7 +27,6 @@
 }
 
 html {
-    width: 1440px;
     background-color: var(--color-black);
     color: var(--color-white);
     scroll-behavior: smooth;
@@ -78,6 +77,11 @@ a:hover {
     color: var(--color-gold);
 }
 
+input, 
+textarea {
+    color: #fff;
+}
+
 .icon { 
     width: 50px; 
     height: 50px;
@@ -121,7 +125,7 @@ body {
 .bg-header-container {
     position: relative;
     width: 1440px;
-    height: 910px;
+    min-height: 910px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/header-bg.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
@@ -288,7 +292,7 @@ body {
 .section-title:before {
     position: absolute;
     top: 50%;
-    right: 150%;
+    right: 120%;
     width: 250px;
     content: '';
     border-color: var(--color-gold);
@@ -299,7 +303,7 @@ body {
 .section-title:after {
     position: absolute;
     top: 50%;
-    left: 150%;
+    left: 120%;
     width: 250px;
     content: '';
     border-color: var(--color-gold);
@@ -354,7 +358,7 @@ body {
 }
 
 .section-portfolio {
-    height: 1388px;
+    min-height: 1388px;
 }
 
 .btn-group {
@@ -381,7 +385,7 @@ body {
 .gallery {
     display: flex;
     flex-flow: row wrap;
-    height: 1145px; 
+    min-height: 1145px; 
 }
 
 .gallery-item {
@@ -391,7 +395,6 @@ body {
 
 .section-video {
     height: 945px;
-    margin-top: 100px;
 }
 
 .video-player-container {
@@ -421,12 +424,12 @@ body {
 }
 
 .section-price {
-    height: 845px;
+    min-height: 845px;
 }
 
 .cards {
     width: 100%;
-    height: 505px;
+    min-height: 505px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -563,7 +566,7 @@ body {
 }
 
 .footer-container {
-    height: 100px;
+    min-height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -601,9 +604,109 @@ body {
     :root {
         --font1: 40px;
         --font2: 32px;
-      }
+    }
+
+    .container {
+        padding: 0 40px;
+    }
+
+    .btn {
+        font-size: 150%;
+    }
+
+    .title-container {
+        width: 364px;
+    }
+
+    .section-skills {
+        margin-bottom: 200px;
+    }
+
+    .skills-items {
+        justify-content: space-between;
+    }
       
     .skills-item {
-        flex: calc(50% - 40px);
+        flex: calc(50% - 44px);
+        margin-left: 44px;
+        margin-bottom: 36px;
     }
-  }
+
+    .skills-item:first-child {
+        margin-left: 44px;
+    }
+
+    .btn-group {
+        width: 445px;
+        justify-content: center;
+    }
+
+    .section-portfolio {
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    .portfolio-btn {
+        flex: calc(50% - 15px);
+        margin-left: 5px;
+    }
+
+    .gallery {
+        margin-top: 60px;
+        width: 450px;
+    }
+
+    .gallery-item {
+        flex: calc(100%);
+        margin-bottom: 25px;
+    }
+
+    .section-video {
+        margin-top: 0;
+    }
+
+    .section-price {
+        flex-flow: column;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+
+    .cards {
+        width: 420px;
+        margin-top: 50px;
+    }
+
+    .card {
+        flex: calc(100%);
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+    .contact-form {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 450px;
+        height: 445px;
+        left: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .copyright {
+        margin-top: 28px;
+    }
+
+    .rss {
+        margin: 20px 0;
+    }
+}
+
