@@ -229,13 +229,17 @@ body {
     line-height: 40px;
 }
 
-.hero-btn {
+.hero-btn,
+.price-btn,
+.contact-btn {
     color: #000;
     border: 0;
     background-color: #bdae82;
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.price-btn:hover,
+.contact-btn:hover {
     color: #fff;
 }
 
@@ -448,13 +452,83 @@ body {
 .price-btn {
     margin-top: 40px;
     margin-bottom: 43px;
-    color: #000;
-    border: 0;
-    background-color: #bdae82;
 }
 
-.price-btn:hover {
-    color: #fff;
+.section-contacts {
+    position: relative;
+    height: 700px;
+    background: url('assets/img/contacts-bg.jpg');
+    background-size: auto 700px;
+    background-position: center center;
+}
+
+.title-contact {
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 450px;
+    height: 445px;
+    left: 950px;
+    top: 60px;
+}
+
+#email {
+    width: 450px;
+    height: 50px;
+    padding-left: 20px;
+    border: 1px solid #BDAE82;
+    background-color: transparent;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    outline: none;
+}
+
+#tel {
+    width: 450px;
+    height: 50px;
+    padding-left: 20px;
+    margin: 20px 0;
+    border: 1px solid #BDAE82;
+    background-color: transparent;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    outline: none;
+
+}
+
+#textarea {
+    width: 450px;
+    height: 100px;
+    padding-top: 5px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #BDAE82;
+    background-color: transparent;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+}
+
+#textarea::placeholder,
+#email::placeholder,
+#tel::placeholder {
+    color: #bdae82;  
 }
 
 .footer {
