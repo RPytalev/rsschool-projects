@@ -66,7 +66,7 @@ ul {
 a {
     color: var(--color-white);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.5s;
 }
 
 a:hover {
@@ -108,11 +108,42 @@ textarea {
     font-size: var(--font2);
     line-height: 40px;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.5s;
 }
 
 body {
     min-height: 100vh;
+}
+
+.hamburger {
+    display: none;
+    width: 50px;
+	height: 50px;
+    margin-left: 40px;
+    margin-top: 8px;
+    cursor: pointer;
+    z-index: 555;
+}
+
+.hamburger-item {
+	width: 50px;
+	height: 5px;
+    margin-bottom: 5px;
+	background-color: var(--color-white);
+}
+
+.hamburger-item:nth-of-type(2).active {
+    display: none;
+}
+
+.hamburger-item:nth-of-type(1).active {
+    top: 50%;
+    transform: translate(0, 100%) rotate(45deg);
+}
+
+.hamburger-item:nth-of-type(3).active {
+    top: 50%;
+    transform: translate(0, -100%) rotate(-45deg);
 }
 
 .container {
@@ -129,6 +160,43 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/header-bg.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
+    overflow-x: hidden;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 0;
+    right: -620px;
+    display: flex;
+    width: 620px;
+    height: 1024px;
+    padding-left: 127px;
+    padding-top: 134px;
+    background-color: var(--color-black);
+    transition: 0.5s;
+    z-index: 555;
+}
+
+.hamburger-menu-list {
+    width: 150px;
+    height: 426px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.hamburger-menu-item {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34.8235px;
+    line-height: 73px;
+    color: var(--color-white);
+}
+
+.open {
+    right: 0;
 }
 
 .header {
@@ -150,7 +218,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.5s;
 }
 
 .logo:hover {
@@ -416,7 +484,7 @@ body {
 .video-player-icon {
     width: 130px;
     height: 130px;
-    transition: color 0.3s;
+    transition: color 0.5s;
 }
 
 .video-player-icon:hover {
@@ -604,6 +672,30 @@ body {
     :root {
         --font1: 40px;
         --font2: 32px;
+    }
+
+    .header-container {
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav {
+        display: none;
+    }
+
+    .toggle {
+        width: 120px;
+        margin-right: 64px;
+    }
+
+    .en {
+        margin-right: 8px;
     }
 
     .container {
