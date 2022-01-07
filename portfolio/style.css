@@ -113,6 +113,16 @@ textarea {
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.master-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
 }
 
 .hamburger {
@@ -123,6 +133,7 @@ body {
     margin-top: 8px;
     cursor: pointer;
     z-index: 555;
+    transition: 0.5s;
 }
 
 .hamburger-item {
@@ -147,15 +158,13 @@ body {
 }
 
 .container {
-    width: 1440px;
-    /* max-width: 1440px; */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .bg-header-container {
-    position: relative;
-    width: 1440px;
+    width: 100%;
     min-height: 910px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/header-bg.jpg);
     background-repeat: no-repeat;
@@ -389,7 +398,7 @@ body {
 
 .skills-item {
     flex: calc(25% - 120px);
-    height: 240px;
+    min-height: 240px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -669,6 +678,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     :root {
         --font1: 40px;
         --font2: 32px;
@@ -720,12 +730,14 @@ body {
       
     .skills-item {
         flex: calc(50% - 44px);
-        margin-left: 44px;
+        min-height: 224px;
+        margin-left: 0;
         margin-bottom: 36px;
     }
 
     .skills-item:first-child {
-        margin-left: 44px;
+        margin-left: 0;
+        margin-bottom: 36px;
     }
 
     .btn-group {
