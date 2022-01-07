@@ -179,7 +179,7 @@ body {
     right: -620px;
     display: flex;
     width: 620px;
-    min-height: 1024px;
+    min-height: calc(100vh);
     padding-left: 127px;
     padding-top: 134px;
     background-color: var(--color-black);
@@ -828,3 +828,9 @@ body {
     }
 }
 
+@media (max-width: 620px) {
+    .hamburger-menu {
+        left: 0;
+        right: 0;
+    }
+}
