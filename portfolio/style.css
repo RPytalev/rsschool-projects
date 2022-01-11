@@ -437,6 +437,7 @@ body {
 
 .section-portfolio {
     min-height: 1388px;
+    padding-left: 20px;
 }
 
 .btn-group {
@@ -477,7 +478,7 @@ body {
 
 .video-player-container {
     width: 100%;
-    min-height: 705px;
+    height: 705px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -503,6 +504,7 @@ body {
 
 .section-price {
     min-height: 845px;
+    margin-bottom: 100px;
 }
 
 .cards {
@@ -571,6 +573,7 @@ body {
     background-size: auto 580px;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title-contact {
@@ -634,6 +637,12 @@ body {
     outline: none;
     resize: none;
     overflow: hidden;
+}
+
+#email,
+#tel, 
+#textarea {
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 #textarea::placeholder,
@@ -787,6 +796,20 @@ body {
         margin-bottom: 25px;
     }
 
+    .section-video {
+        height: 500px;
+    }
+
+    .video-player-container {
+        height: 300px;
+        background-size: contain;
+    } 
+
+    .video-player-icon {
+        width: 75px;
+        height: 75px;
+    }
+
     .cards {
         width: 420px;
     }
@@ -800,6 +823,14 @@ body {
         margin: 50px 0;
     }
 
+    .price-btn {
+        font-size: 120%;
+    }
+
+    .section-contacts {
+        margin-bottom: 50px;
+    }
+
     .contact-form {
         position: absolute;
         display: flex;
@@ -811,6 +842,13 @@ body {
         top: 100px;
         right: auto;
         bottom: auto;
+        font-size: 80%;
+    }
+
+    #email,
+    #tel, 
+    #textarea {
+        font-size: 150%;
     }
 
     .footer-container {
