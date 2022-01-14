@@ -796,13 +796,19 @@ body {
         margin-bottom: 25px;
     }
 
+    .gallery-item:last-child {
+        margin-bottom: 0;
+    }
+
     .section-video {
         height: 500px;
+        margin-bottom: 125px;
     }
 
     .video-player-container {
-        height: 300px;
-        background-size: contain;
+        width: 768px;
+        height: 418px;
+        background-size: cover;
     } 
 
     .video-player-icon {
@@ -868,8 +874,13 @@ body {
 
 @media (max-width: 620px) {
     .hamburger-menu {
-        /* left: 0;
-        right: 0; */
         width: 100vw;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .hamburger-menu-list {
+        justify-content: center;
+        align-items: center;
     }
 }
