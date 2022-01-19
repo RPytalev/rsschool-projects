@@ -306,6 +306,7 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .section {
@@ -481,6 +482,7 @@ body {
 
 .section-video {
     height: 945px;
+    padding: 0 20px;
 }
 
 .video-player-container {
@@ -492,6 +494,7 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/video-player.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
+    background-size: cover;
 }
 
 .video-player {
@@ -512,6 +515,7 @@ body {
 .section-price {
     min-height: 845px;
     margin-bottom: 100px;
+    padding: 0 20px;
 }
 
 .cards {
@@ -571,10 +575,10 @@ body {
 }
 
 .section-contacts {
-    position: relative;
-    min-height: 700px;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 600px;
     background: url('assets/img/contacts-bg.jpg');
-    background-size: auto 580px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -585,14 +589,15 @@ body {
 }
 
 .contact-form {
-    position: absolute;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
     width: 450px;
     height: 445px;
-    left: 950px;
-    top: 60px;
+}
+
+.contact-form .title-contact {
+    margin-top: 60px;
 }
 
 #email {
@@ -795,11 +800,6 @@ body {
         width: 450px;
     }
 
-    .gallery-item {
-        flex: calc(100%);
-        margin-bottom: 25px;
-    }
-
     .gallery-item:last-child {
         margin-bottom: 0;
     }
@@ -838,21 +838,23 @@ body {
     }
 
     .section-contacts {
-        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-form {
-        position: absolute;
         display: flex;
         flex-flow: column;
+        justify-content: center;
         align-items: center;
         width: 450px;
         height: 429px;
-        left: auto;
-        top: 100px;
-        right: auto;
-        bottom: auto;
         font-size: 80%;
+    }
+
+    .contact-form .title-contact {
+        margin-top: 0;
     }
 
     #email,
@@ -864,7 +866,6 @@ body {
     .footer-container {
         flex-flow: column;
         align-items: center;
-        margin-top: -50px;
     }
 
     .copyright {
