@@ -442,7 +442,7 @@ body {
     min-height: 1388px;
 }
 
-.btn-group {
+.portfolio-btn-group {
     display: flex;
     flex-flow: row wrap;
     width: 895px;
@@ -459,6 +459,11 @@ body {
 }
 
 .portfolio-btn:hover {
+    color: var(--color-black);
+    background-color: var(--color-gold);
+}
+
+.active {
     color: var(--color-black);
     background-color: var(--color-gold);
 }

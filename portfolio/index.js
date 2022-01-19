@@ -26,10 +26,22 @@ function closeMenu(event) {
     }
 }
 
-// let portfolioBtn = document.querySelector('.portfolio-btn');
-// portfolioBtn.addEventListener('click', changeImg() );
+const portfolioBtns = document.querySelectorAll('.portfolio-btn');
+const portfolioImages = document.querySelectorAll('.gallery-img');
+const portfolioBtnsGroup = document.querySelector('.portfolio-btn-group');
 
-// function changeImg() {
-//     let galleryImgages = document.querySelectorAll('.gallery-img');
-//     galleryImgages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
-// }
+portfolioBtnsGroup.onclick = function(event) {
+    let target = event.target;
+    changeImage(target);
+}
+
+function changeImage(target) {
+    let selectedBtn = target;
+    if (target.dataset.season) {
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`);
+        portfolioBtns.forEach(element => {
+            element.classList.remove('active');
+        });
+        selectedBtn.classList.add('active');
+    }
+}
