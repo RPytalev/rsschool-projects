@@ -36,12 +36,28 @@ portfolioBtnsGroup.onclick = function(event) {
 }
 
 function changeImage(target) {
-    let selectedBtn = target;
     if (target.dataset.season) {
         portfolioImages.forEach((img, index) => img.src = `./assets/img/${target.dataset.season}/${index + 1}.jpg`);
-        portfolioBtns.forEach(element => {
-            element.classList.remove('active');
-        });
-        selectedBtn.classList.add('active');
+        changeClassActive(target);
     }
 }
+
+function changeClassActive(target) {
+    let selectedBtn = target;
+    portfolioBtns.forEach(element => {
+        element.classList.remove('portfolio-btn.active');
+    });
+    selectedBtn.classList.add('portfolio-btn.active');
+}
+
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+function preloadImages() {
+    seasons.forEach(element => {
+        for(let i = 1; i <= 6; i++) {
+            const img = new Image();
+            img.src = `./assets/img/${element}/${i}.jpg`;
+        }
+    });
+}
+preloadImages();

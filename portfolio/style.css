@@ -463,7 +463,7 @@ body {
     background-color: var(--color-gold);
 }
 
-.active {
+.portfolio-btn.active {
     color: var(--color-black);
     background-color: var(--color-gold);
 }
@@ -784,15 +784,15 @@ body {
         margin-bottom: 36px;
     }
 
-    .btn-group {
-        width: 445px;
-        justify-content: center;
-        margin-bottom: 50px;
-    }
-
     .section-portfolio {
         flex-flow: column;
         align-items: center;
+    }
+
+    .portfolio-btn-group {
+        width: 445px;
+        justify-content: center;
+        margin-bottom: 50px;
     }
     
     .portfolio-btn {
