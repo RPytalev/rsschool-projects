@@ -25,3 +25,11 @@ function closeMenu(event) {
         hambLinkBottom.classList.remove('active');
     }
 }
+
+// let portfolioBtn = document.querySelector('.portfolio-btn');
+// portfolioBtn.addEventListener('click', changeImg() );
+
+// function changeImg() {
+//     let galleryImgages = document.querySelectorAll('.gallery-img');
+//     galleryImgages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`);
+// }
