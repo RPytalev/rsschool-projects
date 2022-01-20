@@ -9,20 +9,24 @@ const portfolioBtnsGroup = document.querySelector('.portfolio-btn-group');
 const ru = document.querySelector('.ru');
 const en = document.querySelector('.en');
 const text = document.querySelectorAll('[data-i18]');
+const lightTheme = document.querySelector('.light');
+const darkTheme = document.querySelector('.dark');
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
-let hamb = document.querySelector('.hamburger');
-let hambMenu = document.querySelector('.hamburger-menu');
-let hambLinkTop = document.querySelector('.hamburger-item:nth-of-type(1)');
-let hambLinkMiddle = document.querySelector('.hamburger-item:nth-of-type(2)');
-let hambLinkBottom = document.querySelector('.hamburger-item:nth-of-type(3)');
-let navLinks = document.querySelectorAll('.nav-link');
+const hamb = document.querySelector('.hamburger');
+const hambMenu = document.querySelector('.hamburger-menu');
+const hambLinkTop = document.querySelector('.hamburger-item:nth-of-type(1)');
+const hambLinkMiddle = document.querySelector('.hamburger-item:nth-of-type(2)');
+const hambLinkBottom = document.querySelector('.hamburger-item:nth-of-type(3)');
+const navLinks = document.querySelectorAll('.nav-link');
 
-hamb.addEventListener("click", function() {
+hamb.addEventListener("click", openMenu);
+
+function openMenu() {
     hambLinkTop.classList.toggle('active');
     hambLinkMiddle.classList.toggle('active');
     hambLinkBottom.classList.toggle('active');
     hambMenu.classList.toggle('open');
-});
+}
 
 navLinks.forEach( (elem) => elem.addEventListener('click', closeMenu) );
 
@@ -99,4 +103,31 @@ function getTranslate(targetToggle) {
         }
     });
     changeClassActive(targetToggle);
+}
+
+lightTheme.onclick = function(event) {
+    let targetSwitch = event.target;
+    changeTheme(targetSwitch);
+}
+
+darkTheme.onclick = function(event) {
+    let targetSwitch = event.target;
+    changeTheme(targetSwitch);
+}
+
+function changeTheme(targetSwitch) {
+    let theme = targetSwitch.dataset.theme;
+    if (theme == 'light') {
+        lightTheme.style.display = 'none';
+        darkTheme.style.display = 'flex';
+        document.documentElement.style.setProperty('--body-color', '#fff');
+        document.documentElement.style.setProperty('--text-color', '#000');
+        document.documentElement.style.setProperty('--hover-color', '#000');
+    } else if (theme == 'dark') {
+        darkTheme.style.display = 'none';
+        lightTheme.style.display = 'flex';
+        document.documentElement.style.setProperty('--body-color', '#000');
+        document.documentElement.style.setProperty('--text-color', '#fff');
+        document.documentElement.style.setProperty('--hover-color', '#bdae82');
+    }
 }

@@ -1,4 +1,7 @@
 :root {
+    --body-color: #000;
+    --text-color: #fff;
+    --hover-color: #bdae82;
     --color-gold: #bdae82;
     --color-black: #000;
     --color-white: #fff;
@@ -29,8 +32,8 @@
 html {
     max-width: 1440px;
     margin: 0 auto;
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--body-color);
+    color: var(--text-color);
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -41,10 +44,11 @@ h1 {
     font-weight: bold;
     font-size: 60px;
     line-height: 120px;
+    color: var(--color-white);
 }
 
 h2 {
-    color: var(--color-gold);
+    color: var(--hover-color);
     font-family: Merriweather;
     font-style: normal;
     font-weight: bold;
@@ -58,6 +62,10 @@ h3 {
     font-weight: bold;
     font-size: var(--font2);
     line-height: 40px;
+}
+
+p {
+    color: var(--text-color);
 }
 
 ul {
@@ -82,7 +90,7 @@ a:hover {
 
 input, 
 textarea {
-    color: #fff;
+    color: var(--color-white);
 }
 
 .icon { 
@@ -143,7 +151,7 @@ body {
 	width: 50px;
 	height: 5px;
     margin-bottom: 5px;
-	background-color: var(--color-white);
+    background-color: var(--color-white);
 }
 
 .hamburger-item:nth-of-type(2).active {
@@ -184,7 +192,7 @@ body {
     min-height: calc(100vh);
     padding-left: 127px;
     padding-top: 134px;
-    background-color: var(--color-black);
+    background-color: var(--body-color);
     transition: 0.5s;
     z-index: 555;
 }
@@ -204,7 +212,6 @@ body {
     font-weight: normal;
     font-size: 34.8235px;
     line-height: 73px;
-    color: var(--color-white);
 }
 
 .open {
@@ -221,6 +228,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper {
+    display: flex;
 }
 
 .logo {
@@ -294,6 +305,7 @@ body {
     font-style: normal;
     font-weight: bold;
     font-size: var(--font2);
+    color: var(--color-white);
 }
 
 .ru {
@@ -309,11 +321,13 @@ body {
     margin-right: 20px;
 }
 
-.white {
+.light {
     position: absolute;
     top: 0;
     left: 0;
-    fill: #fff;
+    width: 50px;
+    height: 50px;
+    z-index: 555;
 }
 
 .dark {
@@ -321,7 +335,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    fill: #fff;
+    width: 50px;
+    height: 50px;
+    z-index: 555;
 }
 
 .main-container {
@@ -356,6 +372,7 @@ body {
     font-weight: normal;
     font-size: var(--font2);
     line-height: 40px;
+    color: var(--color-white);
 }
 
 .hero-btn,
@@ -399,7 +416,7 @@ body {
     right: 120%;
     width: 250px;
     content: '';
-    border-color: var(--color-gold);
+    border-color: var(--hover-color);
     border-style: solid;
     border-width: 2px;
 }
@@ -410,7 +427,7 @@ body {
     left: 120%;
     width: 250px;
     content: '';
-    border-color: var(--color-gold);
+    border-color: var(--hover-color);
     border-style: solid;
     border-width: 2px;
 }
@@ -431,7 +448,7 @@ body {
     align-items: center;
     margin-left: 40px;
     text-align: center;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .skills-item:first-child {
@@ -477,22 +494,22 @@ body {
     flex: calc(25% - 15px);
     margin-left: 5px;
     border: 1px solid var(--color-gold);
-    color: var(--color-gold);
+    color: var(--hover-color);
     background-color: transparent;
 }
 
 .portfolio-btn:hover {
-    color: var(--color-black);
+    color: var(--body-color);
     background-color: var(--color-gold);
 }
 
 .activeBtn {
-    color: var(--color-black);
+    color: var(--body-color);
     background-color: var(--color-gold);
 }
 
 .activeLink {
-    color: var(--color-gold);;
+    color: var(--color-gold);
 }
 
 .gallery {
@@ -576,7 +593,7 @@ body {
     font-size: 28px;
     line-height: 56px;
     text-align: center;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .card-price {
@@ -598,7 +615,7 @@ body {
     font-size: 18px;
     line-height: 36px;
     text-align: center;
-    color: var(--color-white);
+    color: var(--text-color);
 }
 
 .price-btn {
@@ -609,7 +626,7 @@ body {
 .section-contacts {
     display: flex;
     justify-content: flex-end;
-    min-height: 600px;
+    min-height: 700px;
     background: url('assets/img/contacts-bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -618,6 +635,7 @@ body {
 
 .title-contact {
     margin-bottom: 40px;
+    color: var(--color-gold);
 }
 
 .contact-form {
@@ -625,7 +643,8 @@ body {
     flex-flow: column;
     align-items: flex-start;
     width: 450px;
-    height: 445px;
+    height: 485px;
+    margin-right: 20px;
 }
 
 .contact-form .title-contact {
@@ -697,6 +716,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .copyright {
@@ -704,6 +725,11 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 150%;
+    color: var(--color-white);
+}
+
+.copyright p {
+    color: var(--color-white);
 }
 
 .year {
@@ -726,7 +752,6 @@ body {
     width: 24px;
     height: 24px;
     margin: 0 12px;
-    fill: var(--color-white);
 }
 
 @media (max-width: 768px) {
@@ -744,6 +769,10 @@ body {
         padding: 0 20px;
     }
 
+    .wrapper {
+        display: flex;
+    }
+
     .hamburger {
         display: flex;
         flex-flow: column;
@@ -753,6 +782,15 @@ body {
 
     .hamburger-menu {  
         width: 580px;
+        background-color: var(--body-color);
+    }
+
+    .hamburger-menu a {
+        color: var(--text-color);
+    }
+
+    .hamburger-item {
+        background-color: var(--color-gold);
     }
     
     .nav {
