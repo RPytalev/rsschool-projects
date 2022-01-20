@@ -48,7 +48,6 @@ function changeImage(targetBtns) {
 }
 
 function changeClassActive(target) {
-    console.log(target.dataset);
     if (target.dataset.season) {
         let selectedBtn = target.dataset.season;
         portfolioBtns.forEach(element => {
