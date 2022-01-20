@@ -19,6 +19,10 @@ const hambLinkMiddle = document.querySelector('.hamburger-item:nth-of-type(2)');
 const hambLinkBottom = document.querySelector('.hamburger-item:nth-of-type(3)');
 const navLinks = document.querySelectorAll('.nav-link');
 
+let activeLang;
+let activeTheme;
+let activeSeason;
+
 hamb.addEventListener("click", openMenu);
 
 function openMenu() {
@@ -40,36 +44,35 @@ function closeMenu(event) {
 }
 
 portfolioBtnsGroup.onclick = function(event) {
-    let targetBtns = event.target;
+    let targetBtns = event.target.dataset.season;
     changeImage(targetBtns);
 }
 
 function changeImage(targetBtns) {
-    if (targetBtns.dataset.season) {
-        portfolioImages.forEach((img, index) => img.src = `./assets/img/${targetBtns.dataset.season}/${index + 1}.jpg`);
-        changeClassActive(targetBtns);
+    if (targetBtns) {
+        activeSeason = targetBtns;
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${targetBtns}/${index + 1}.jpg`);
+        changeClassActiveBtn(targetBtns);
     }
 }
 
-function changeClassActive(target) {
-    if (target.dataset.season) {
-        let selectedBtn = target.dataset.season;
-        portfolioBtns.forEach(element => {
-            if (element.dataset.season == selectedBtn) {
-                element.classList.add('activeBtn')
-            } else {
-                element.classList.remove('activeBtn');
-            }
-        });
-    } else {
-        let selectedLang = target.dataset.lang;
-        if (selectedLang == 'ru') {
-            en.classList.remove('activeLink');
-            ru.classList.toggle('activeLink');
+function changeClassActiveBtn(targetBtns) {
+    portfolioBtns.forEach(element => {
+        if (element.dataset.season == targetBtns) {
+            element.classList.add('activeBtn');
         } else {
-            ru.classList.remove('activeLink');
-            en.classList.toggle('activeLink');
+            element.classList.remove('activeBtn');
         }
+    });
+}
+
+function changeClassActiveToggle(targetToggle) {
+    if (targetToggle == 'ru') {
+        en.classList.remove('activeLink');
+        ru.classList.toggle('activeLink');
+    } else {
+        ru.classList.remove('activeLink');
+        en.classList.toggle('activeLink');
     }
 }
 
@@ -89,41 +92,43 @@ en.onclick = function(event) {
 }
 
 ru.onclick = function(event) {
-    let targetToggle = event.target;
+    let targetToggle = event.target.dataset.lang;
     getTranslate(targetToggle);
 }
 
 function getTranslate(targetToggle) {
-    let lang = targetToggle.dataset.lang;
     text.forEach(element => {
-        if (lang == 'ru') {
+        if (targetToggle == 'ru') {
+            activeLang = 'ru';
             element.textContent = i18Obj.ru[element.dataset.i18];
         } else {
+            activeLang = 'en';
             element.textContent = i18Obj.en[element.dataset.i18];
         }
     });
-    changeClassActive(targetToggle);
+    changeClassActiveToggle(targetToggle);
 }
 
 lightTheme.onclick = function(event) {
-    let targetSwitch = event.target;
-    changeTheme(targetSwitch);
+    let light = event.target.dataset.theme;
+    changeTheme(light);
 }
 
 darkTheme.onclick = function(event) {
-    let targetSwitch = event.target;
-    changeTheme(targetSwitch);
+    let dark = event.target.dataset.theme;
+    changeTheme(dark);
 }
 
 function changeTheme(targetSwitch) {
-    let theme = targetSwitch.dataset.theme;
-    if (theme == 'light') {
+    if (targetSwitch == 'light') {
+        activeTheme = 'light';
         lightTheme.style.display = 'none';
         darkTheme.style.display = 'flex';
         document.documentElement.style.setProperty('--body-color', '#fff');
         document.documentElement.style.setProperty('--text-color', '#000');
         document.documentElement.style.setProperty('--hover-color', '#000');
-    } else if (theme == 'dark') {
+    } else if (targetSwitch == 'dark') {
+        activeTheme = 'dark';
         darkTheme.style.display = 'none';
         lightTheme.style.display = 'flex';
         document.documentElement.style.setProperty('--body-color', '#000');
@@ -131,3 +136,23 @@ function changeTheme(targetSwitch) {
         document.documentElement.style.setProperty('--hover-color', '#bdae82');
     }
 }
+
+function setLocalStorage() {
+    localStorage.setItem('lang', activeLang);
+    localStorage.setItem('theme', activeTheme);
+    localStorage.setItem('season', activeSeason);
+}
+
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+    if(localStorage.getItem('lang')) {
+      let lang = localStorage.getItem('lang');
+      getTranslate(lang);
+      let theme = localStorage.getItem('theme');
+      changeTheme(theme);
+      let season = localStorage.getItem('season');
+      changeImage(season);
+    }
+}
+  window.addEventListener('load', getLocalStorage);
