@@ -9,6 +9,7 @@ const portfolioBtnsGroup = document.querySelector('.portfolio-btn-group');
 const ru = document.querySelector('.ru');
 const en = document.querySelector('.en');
 const text = document.querySelectorAll('[data-i18]');
+const switchTheme = document.querySelector('.switch');
 const lightTheme = document.querySelector('.light');
 const darkTheme = document.querySelector('.dark');
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
@@ -106,17 +107,12 @@ function getTranslate(targetToggle) {
             element.textContent = i18Obj.en[element.dataset.i18];
         }
     });
-    changeClassActiveToggle(targetToggle);
+    changeClassActiveToggle(activeLang);
 }
 
-lightTheme.onclick = function(event) {
-    let light = event.target.dataset.theme;
-    changeTheme(light);
-}
-
-darkTheme.onclick = function(event) {
-    let dark = event.target.dataset.theme;
-    changeTheme(dark);
+switchTheme.onclick = function(event) {
+    let targetSwitch = event.target.dataset.theme;
+    changeTheme(targetSwitch);
 }
 
 function changeTheme(targetSwitch) {
@@ -155,4 +151,4 @@ function getLocalStorage() {
       changeImage(season);
     }
 }
-  window.addEventListener('load', getLocalStorage);
+window.addEventListener('load', getLocalStorage);

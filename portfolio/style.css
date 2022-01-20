@@ -325,9 +325,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
-    height: 50px;
-    z-index: 555;
 }
 
 .dark {
@@ -335,9 +332,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
-    height: 50px;
-    z-index: 555;
 }
 
 .main-container {
@@ -384,9 +378,27 @@ body {
 }
 
 .hero-btn:hover,
-.price-btn:hover,
-.contact-btn:hover {
+.price-btn:hover {
+    transition: none;
     color: var(--color-white);
+    animation: slide 0.2s 1;
+}
+
+@keyframes slide {
+    0% {
+        transform: scale(0.8);
+        color: var(--color-white);
+        border: none;
+    }
+    50% {
+        color: var(--color-gold);
+        border: 6px dotted var(--color-white);
+    }
+    100% {
+      transform: scale(1);
+      color: var(--color-black);
+      border: none;
+    }
 }
 
 .section-skills {
@@ -709,6 +721,10 @@ body {
 #email::placeholder,
 #tel::placeholder {
     color: var(--color-gold);  
+}
+
+.contact-btn:hover {
+    color: var(--color-white);
 }
 
 .footer-container {
