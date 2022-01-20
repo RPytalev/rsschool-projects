@@ -463,9 +463,13 @@ body {
     background-color: var(--color-gold);
 }
 
-.portfolio-btn.active {
+.activeBtn {
     color: var(--color-black);
     background-color: var(--color-gold);
+}
+
+.activeLink {
+    color: var(--color-gold);;
 }
 
 .gallery {
