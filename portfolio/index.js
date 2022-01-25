@@ -102,9 +102,11 @@ function getTranslate(targetToggle) {
         if (targetToggle == 'ru') {
             activeLang = 'ru';
             element.textContent = i18Obj.ru[element.dataset.i18];
+            ru.classList.toggle('activeLink');
         } else {
             activeLang = 'en';
             element.textContent = i18Obj.en[element.dataset.i18];
+            en.classList.toggle('activeLink');
         }
     });
     changeClassActiveToggle(activeLang);

@@ -393,13 +393,11 @@ body {
 
 .hero-btn:hover,
 .price-btn:hover {
-    transition: none;
     color: var(--color-white);
     animation: slide 0.2s 1;
 }
 
 .video-player:hover {
-    transition: none;
     color: var(--color-white);
     border-radius: 50%;
     animation: slide 0.2s 1;
@@ -529,7 +527,7 @@ body {
     border: 1px solid var(--color-gold);
     color: var(--hover-color);
     background-color: transparent;
-    transition: 0.25s;
+    transition: 0.5s;
 }
 
 .portfolio-btn:first-child {
@@ -538,13 +536,11 @@ body {
 
 .portfolio-btn:hover {
     color: var(--body-color);
-    background-color: var(--color-gold);
 }
 
 .portfolio-btn:hover {
 	box-shadow: inset -110px 0 0 0 var(--color-gold), inset 110px 0 0 0 var(--color-gold);
 }
-
 
 .activeBtn {
     color: var(--body-color);
@@ -1087,6 +1083,7 @@ body {
     }
 
     .hero-text {
+        width: 80%;
         font-size: 90%;
     }
 
@@ -1166,5 +1163,45 @@ body {
         line-height: 25px;
         vertical-align: middle;
         margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .toggle {
+        margin-right: 0;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .dark {
+        width: 30px;
+        height: 30px;
+        top: 21%;
+    }
+
+    .light {
+        width: 30px;
+        height: 30px;
+        top: 21%;
+    }
+
+    .switch {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .hamburger-item {
+        width: 35px;
+    }
+
+    .wrapper {
+        width: 75%;
+    }
+
+    .hero-text {
+        width: 50%;
     }
 }
