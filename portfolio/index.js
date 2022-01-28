@@ -19,9 +19,9 @@ const hambLinkMiddle = document.querySelector('.hamburger-item:nth-of-type(2)');
 const hambLinkBottom = document.querySelector('.hamburger-item:nth-of-type(3)');
 const navLinks = document.querySelectorAll('.nav-link');
 
-let activeLang = 'en';
-let activeTheme = 'light';
-let activeSeason = 'summer';
+let activeLang;
+let activeTheme;
+let activeSeason;
 
 hamb.addEventListener("click", openMenu);
 
@@ -153,7 +153,11 @@ function getLocalStorage() {
       let lang = localStorage.getItem('lang');
       getTranslate(lang);
       let theme = localStorage.getItem('theme');
-      changeTheme(theme);
+      if (theme == 'light') {
+        changeThemeToLight();
+      } else {
+        changeThemeToDark();
+      }
       let season = localStorage.getItem('season');
       changeImage(season);
     }
