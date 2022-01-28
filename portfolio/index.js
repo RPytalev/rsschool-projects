@@ -9,9 +9,8 @@ const portfolioBtnsGroup = document.querySelector('.portfolio-btn-group');
 const ru = document.querySelector('.ru');
 const en = document.querySelector('.en');
 const text = document.querySelectorAll('[data-i18]');
-const switchTheme = document.querySelector('.switch');
-const lightTheme = document.querySelector('.light');
-const darkTheme = document.querySelector('.dark');
+const iconSun = document.querySelector('.sun');
+const iconMoon = document.querySelector('.moon');
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
 const hamb = document.querySelector('.hamburger');
 const hambMenu = document.querySelector('.hamburger-menu');
@@ -20,9 +19,9 @@ const hambLinkMiddle = document.querySelector('.hamburger-item:nth-of-type(2)');
 const hambLinkBottom = document.querySelector('.hamburger-item:nth-of-type(3)');
 const navLinks = document.querySelectorAll('.nav-link');
 
-let activeLang;
-let activeTheme;
-let activeSeason;
+let activeLang = 'en';
+let activeTheme = 'light';
+let activeSeason = 'summer';
 
 hamb.addEventListener("click", openMenu);
 
@@ -112,27 +111,33 @@ function getTranslate(targetToggle) {
     changeClassActiveToggle(activeLang);
 }
 
-switchTheme.onclick = function(event) {
-    let targetSwitch = event.target.dataset.theme;
-    changeTheme(targetSwitch);
+iconSun.addEventListener('click', changeTheme);
+iconMoon.addEventListener('click', changeTheme);
+
+function changeTheme() {
+    if (activeTheme == 'light') {
+        changeThemeToDark();
+    } else {
+        changeThemeToLight();
+    }
 }
 
-function changeTheme(targetSwitch) {
-    if (targetSwitch == 'light') {
-        activeTheme = 'light';
-        lightTheme.style.display = 'none';
-        darkTheme.style.display = 'flex';
-        document.documentElement.style.setProperty('--body-color', '#fff');
-        document.documentElement.style.setProperty('--text-color', '#000');
-        document.documentElement.style.setProperty('--hover-color', '#000');
-    } else if (targetSwitch == 'dark') {
-        activeTheme = 'dark';
-        darkTheme.style.display = 'none';
-        lightTheme.style.display = 'flex';
-        document.documentElement.style.setProperty('--body-color', '#000');
-        document.documentElement.style.setProperty('--text-color', '#fff');
-        document.documentElement.style.setProperty('--hover-color', '#bdae82');
-    }
+function changeThemeToLight() {
+    activeTheme = 'light';
+    iconSun.style.display = 'none';
+    iconMoon.style.display = 'flex';
+    document.documentElement.style.setProperty('--body-color', '#fff');
+    document.documentElement.style.setProperty('--text-color', '#000');
+    document.documentElement.style.setProperty('--hover-color', '#000');
+}
+
+function changeThemeToDark() {
+    activeTheme = 'dark';
+    iconMoon.style.display = 'none';
+    iconSun.style.display = 'flex';
+    document.documentElement.style.setProperty('--body-color', '#000');
+    document.documentElement.style.setProperty('--text-color', '#fff');
+    document.documentElement.style.setProperty('--hover-color', '#bdae82');
 }
 
 function setLocalStorage() {

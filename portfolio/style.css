@@ -99,6 +99,7 @@ textarea {
     height: 50px;
     fill: var(--color-white);
     stroke: var(--color-white);
+    cursor: pointer;
 }
 
 .skills-icon {
@@ -274,7 +275,7 @@ body {
     font-size: var(--font3);
 }
 
-.toggle {
+.toggle-lang {
     width: 70px;
     height: 50px;
     margin-right: 20px;
@@ -323,29 +324,28 @@ body {
     line-height: 40px;
 }
 
-.switch {
+.switch-theme {
+    display: flex;
     position: relative;
     width: 45px;
     height: 45px;
     margin-left: 30px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
-.light {
-    width: 45px;
-    height: 45px;
+.sun {
+    display: flex;
     position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.dark {
     width: 45px;
     height: 45px;
+}
+
+.moon {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 45px;
+    height: 45px;
 }
 
 .main-container {
@@ -1203,5 +1203,11 @@ body {
 
     .hero-text {
         width: 50%;
+    }
+    .section-skills .title-container,
+    .section-portfolio .title-container,
+    .section-video .title-container,
+    .section-price .title-container {
+        margin-top: 20px;
     }
 }
