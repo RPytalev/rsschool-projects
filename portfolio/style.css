@@ -765,8 +765,7 @@ body {
     color: var(--color-gold);  
 }
 
-.contact-btn:hover, 
-.contact-btn:focus {
+.contact-btn:hover {
     color: var(--color-white);
     animation: tremor 0.1s infinite;
 }
