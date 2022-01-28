@@ -536,6 +536,10 @@ body {
     margin-left: 0;
 }
 
+.portfolio-btn:first-child {
+    margin-left: 0;
+}
+
 .portfolio-btn:hover {
     color: var(--body-color);
 }
@@ -558,6 +562,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    width: 100%;
     min-height: 1145px; 
 }
 
@@ -1210,6 +1215,7 @@ body {
     .hero-text {
         width: 50%;
     }
+  
     .section-skills .title-container,
     .section-portfolio .title-container,
     .section-video .title-container,
