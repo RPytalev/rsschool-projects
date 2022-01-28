@@ -326,6 +326,8 @@ body {
 
 .switch-theme {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 45px;
     height: 45px;
@@ -616,6 +618,10 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+}
+
+.card:first-child {
+    margin-left: 0;
 }
 
 .card {
