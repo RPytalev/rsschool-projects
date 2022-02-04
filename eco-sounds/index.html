@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" sizes="16x16" href="favicon.ico" type="image/png">
+    <title>Ecosounds</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg class="icon">
+                    <use xlink:href="assets/svg/sprite.svg#logo"></use>
+                  </svg>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link link-active" data-track="solovey">Solovey</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-track="drozd">Drozd</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-track="zarynka">Zarynca</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-track="javoronok">Javoronok</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-track="slavka">Slavka</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="hamburger-item"></span>
+                <span class="hamburger-item"></span>
+                <span class="hamburger-item"></span>
+            </div>
+            <div class="hamburger-menu">
+                <ul class="hamburger-menu-list">
+                    <li class="hamburger-menu-item"><a href="#" class="nav-link" data-track="solovey">Solovey</a></li>
+                    <li class="hamburger-menu-item"><a href="#" class="nav-link" data-track="drozd">Drozd</a></li>
+                    <li class="hamburger-menu-item"><a href="#" class="nav-link" data-track="zarynka">Zarynca</a></li>
+                    <li class="hamburger-menu-item"><a href="#" class="nav-link" data-track="javoronok">Javoronok</a></li>
+                    <li class="hamburger-menu-item"><a href="#" class="nav-link" data-track="slavka">Slavka</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <button class="audio-player-btn" type="button">
+                <svg class="icon play">
+                    <use xlink:href="assets/svg/sprite.svg#play"></use>
+                </svg>
+                <svg class="icon pause icon-hidden">
+                    <use xlink:href="assets/svg/sprite.svg#pause"></use>
+                </svg>
+                <div class="effect-1"></div>
+                <div class="effect-2"></div>
+            </button>
+        </div>
+        <audio src="assets/audio/solovey.mp3"></audio>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>&copy;</p>
+            <p class="year">2022</p>
+            <a href="https://github.com/RPytalev" rel="noopener" target="_blank">github</a>
+        </div>
+        <a class="rss" href="https://rs.school/js-stage0/" rel="noopener" target="_blank">
+            <svg class="icon">
+                <use xlink:href="assets/svg/sprite.svg#rss"></use>
+              </svg>
+        </a>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
