@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" sizes="16x16" href="favicon.png" type="image/png">
+    <title>Tic-tac-toe</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3>o</h3>
+      <h2>TIC</h2> 
+      <h3 class="header-x">x</h3> 
+      <h2>TAC</h2> 
+      <h3 class="header-x">x</h3> 
+      <h2>TOE</h2>
+      <h3>o</h3>
+    </header>
+    <main>
+      <div class="area-container">
+        <div class="area">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="console-container">
+          <div class="titles">
+            <div class="title">WINNER</div>
+            <div class="winner-list-title">WINNERS</div>
+          </div>
+          <div class="dashbord-container">
+            <div class="console">
+              <h2 class="x">X</h2>
+              <h2 class="o">O</h2>
+              <h2 class="display">0</h2>
+              <div class="btn" role="button">RESTART</div>
+            </div>
+            <div class="dashboard">
+              <ol class="winner-list">
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+                <li class="winner-list-item">-</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="copyright">
+          <p>&copy;</p>
+          <p class="year">2022</p>
+          <a href="https://github.com/RPytalev" rel="noopener" target="_blank">github</a>
+      </div>
+      <a class="rss" href="https://rs.school/js-stage0/" rel="noopener" target="_blank">
+          <svg class="icon">
+              <use xlink:href="assets/svg/sprite.svg#rss"></use>
+            </svg>
+      </a>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
